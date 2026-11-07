@@ -33,7 +33,20 @@ except Exception:
     API_KEY = ""
     MODEL = "gpt-5.5"
 
-API_KEY = API_KEY or getenv("OPENAI_API_KEY", "")
+import os
+import streamlit as st
+
+try:
+    API_KEY = st.secrets.get("OPENAI_API_KEY", "")
+except Exception:
+    API_KEY = ""
+
+if not API_KEY:
+    API_KEY = os.environ.get("OPENAI_API_KEY", "")
+
+if not API_KEY:
+    st.error("OpenAI API 키를 찾을 수 없습니다.")
+    st.stop()
 
 # =====================================
 # 3. AI 기본 설정
