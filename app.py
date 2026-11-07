@@ -1,10 +1,7 @@
 import streamlit as st
 import time
 
-# 1. 페이지 기본 설정
-st.set_page_title("마음 쉼터")
-import streamlit as st
-import time
+
 
 # 1. 페이지 기본 설정
 st.set_page_config(
