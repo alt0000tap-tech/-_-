@@ -33,7 +33,7 @@ except Exception:
     API_KEY = ""
     MODEL = "gpt-5.5"
 
-API_KEY = API_KEY or os.getenv("OPENAI_API_KEY", "")
+API_KEY = API_KEY or .getenv("OPENAI_API_KEY", "")
 
 # =====================================
 # 3. AI 기본 설정
