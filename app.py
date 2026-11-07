@@ -3,7 +3,18 @@ import time
 
 # 1. 페이지 기본 설정
 st.set_page_title("마음 쉼터")
+import streamlit as st
+import time
+
+# 1. 페이지 기본 설정
+st.set_page_config(
+    page_title="마음 쉼터",
+    page_icon="🌿",
+    layout="centered"
+)
+
 st.title("🌿 마음 쉼터 대화방")
+st.write("편안하게 마음속 이야기를 나누고 잠시 숨을 고를 수 있는 공간입니다.")
 st.write("편안하게 마음속 이야기를 나누고 잠시 숨을 고를 수 있는 공간입니다.")
 
 # 2. 세션 대화 기록 초기화
