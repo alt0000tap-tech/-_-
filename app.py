@@ -50,7 +50,6 @@ if not API_KEY:
     st.stop()
 import os
 import streamlit as st
-from openai import OpenAI
 
 API_KEY = os.environ.get("OPENAI_API_KEY", "")
 
