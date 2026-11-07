@@ -38,6 +38,7 @@ emotions = {
     "피곤": ["피곤", "지쳐", "힘들어", "졸려"]
 }
 
+
 def detect_emotion(text):
     for emotion, keywords in emotions.items():
         if any(word in text for word in keywords):
@@ -192,3 +193,59 @@ st.caption(
     "🌿 이 프로그램은 전문 상담을 대신하지 않는 "
     "간단한 대화 도우미입니다."
 )
+# =================================
+# 마음 쉼터 도움 메뉴
+# =================================
+
+st.divider()
+st.header("🌿 마음을 돌보는 공간")
+
+tab1, tab2, tab3 = st.tabs([
+    "🧘 마음 진정",
+    "📔 감정 기록",
+    "🆘 도움 요청"
+])
+
+with tab1:
+    st.subheader("잠깐 쉬어 가기")
+    st.write("편안한 자세로 앉아서 자연스럽게 호흡해 보세요.")
+    st.info("천천히 숨을 들이쉬고 내쉬면서 잠시 쉬어도 괜찮아요.")
+
+with tab2:
+    st.subheader("오늘의 감정")
+
+    feeling = st.selectbox(
+        "오늘 어떤 기분인가요?",
+        ["기쁨", "평온", "슬픔", "걱정", "외로움", "화남", "잘 모르겠음"]
+    )
+
+    diary = st.text_area(
+        "오늘 있었던 일을 적어 보세요."
+    )
+
+    if st.button("기록 확인하기"):
+        st.success("마음을 표현해 줘서 고마워요.")
+        st.write("오늘의 기분:", feeling)
+        st.write(diary)
+
+with tab3:
+    st.subheader("도움을 요청해도 괜찮아요.")
+
+    st.write("혼자 해결하려고 하지 않아도 돼요.")
+
+    st.markdown(
+        "**믿을 수 있는 어른에게 이야기해 보세요.**"
+    )
+
+    st.markdown(
+        "**자살예방상담전화: 109**"
+    )
+
+    st.markdown(
+        "**긴급 신고: 112 / 119**"
+    )
+
+    st.warning(
+        "당장 위험하다면 혼자 있지 말고 "
+        "주변 어른에게 즉시 알려 주세요."
+    )
