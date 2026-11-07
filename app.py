@@ -1,3 +1,4 @@
+from openai import OpenAI
 import streamlit as st
 import time
 
@@ -48,7 +49,23 @@ if not API_KEY:
 if not API_KEY:
     st.info("API 키를 입력해 주세요.")
     st.stop()
+import os
+import streamlit as st
+from openai import OpenAI
 
+API_KEY = os.environ.get("OPENAI_API_KEY", "")
+
+if not API_KEY:
+    API_KEY = st.text_input(
+        "OpenAI API 키 입력",
+        type="password"
+    )
+
+if API_KEY:
+    client = OpenAI(api_key=API_KEY)
+else:
+    st.warning("API 키를 입력해 주세요.")
+    st.stop()
 client = OpenAI(api_key=API_KEY)
 # =====================================
 # 3. AI 기본 설정
